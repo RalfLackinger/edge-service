@@ -13,7 +13,7 @@ public class UserController {
 
 	@GetMapping("user")
 	public Mono<User> getUser(@AuthenticationPrincipal OidcUser oidcUser) {
-		User user = new User(
+		var user = new User(
 				oidcUser.getPreferredUsername(),
 				oidcUser.getGivenName(),
 				oidcUser.getFamilyName(),
